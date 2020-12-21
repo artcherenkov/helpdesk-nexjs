@@ -24,5 +24,35 @@ model Issues {
 
 5) `npx prisma migrate save --experimental`
 6) `npx prisma migrate up --experimental`
+7) `prisma introspect`
+8) `prisma generate`
 
 Все, теперь модель (таблица) доступна в базе данных.
+
+```
+model Issues {
+  id            Int      @default(autoincrement()) @id
+  createdAt     DateTime @default(now())
+  topic         String
+  client        String
+  type          String
+  product       String
+  department    String
+  responsible   String
+  status        String
+  dueDate       String
+  actualDueDate String
+  lastAnswer    String
+  priority      String
+  isExpired     String
+  description   String
+}
+
+model Users {
+  id            Int      @default(autoincrement()) @id
+  createdAt     DateTime @default(now())
+  name      String
+  surname   String
+  password  String
+}
+```

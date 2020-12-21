@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import {IsExpired, Priority, Status} from '../../utils/const';
 import {formatDates, getKeyByValue} from '../../utils/common';
+import moment from 'moment';
 
 const Row = ({issue}) => {
   // todo обрезать длинные темы
@@ -10,7 +11,7 @@ const Row = ({issue}) => {
   const isExpiredClassName = getKeyByValue(IsExpired, isExpired);
 
   // fDate – буква f значит "форматированный"
-  const [fDate, fDueDate, fActualDate] =  formatDates(`DD.MM.yyyy hh:mm`, date, dueDate, actualDueDate);
+  const [fDate, fDueDate, fActualDate] =  formatDates(`DD.MM.yyyy hh:mm`, moment(date), moment(dueDate), moment(actualDueDate));
 
   return (
     <tr className="table__row">
