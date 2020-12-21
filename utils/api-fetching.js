@@ -16,7 +16,7 @@ export async function fetchIssuesList() {
 }
 
 export async function createUser(form) {
-  const response = await fetch('/api/users/create', {
+  const response = await fetch(`/api/users/create`, {
     method: 'POST',
     body: JSON.stringify(collectFormData(form))
   })
@@ -36,7 +36,7 @@ export async function createUser(form) {
 }
 
 export async function createIssue(form) {
-  const response = await fetch('/api/issues/create', {
+  const response = await fetch(`/api/issues/create`, {
     method: 'POST',
     body: JSON.stringify({content: generateIssue()})
   })
