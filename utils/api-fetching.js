@@ -1,17 +1,15 @@
 import {collectFormData} from './common';
 import {generateIssue} from '../mock/issue';
 
-const BASE_URL = 'http://localhost:3000';
-
 export async function fetchUsersList() {
-  const response = await fetch(`${BASE_URL}/api/users`);
+  const response = await fetch(`/api/users`);
   const data = await response.json();
   const {content} = data;
   return content;
 }
 
 export async function fetchIssuesList() {
-  const response = await fetch(`${BASE_URL}/api/issues`);
+  const response = await fetch(`/api/issues`);
   const data = await response.json();
   const {content} = data;
   return content;
