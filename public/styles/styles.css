@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+
+body {
+  margin: 0;
+  background-color: #f1f1f1;
+}
+
+.table-section {
+  margin-top: 20px;
+}
+
+.table__wrapper {
+  overflow: auto;
+  max-height: 600px;
+  padding-bottom: 10px;
+}
+
+.table {
+  font-family: "Helvetica", sans-serif;
+  margin: 0;
+  border-collapse: collapse;
+}
+
+.table__head {
+  font-size: 14px;
+  font-weight: bold;
+  min-height: 30px;
+}
+
+.table__row {
+  border-bottom: 1px solid #104673;
+}
+.table__row:nth-child(2n) {
+  background-color: #f3f3f3;
+}
+
+.table__cell {
+  margin: 0;
+  font-size: 12px;
+  padding: 10px 15px;
+}
+.table__cell_header {
+  background-color: #e3e3e3;
+  position: sticky;
+  top: 0;
+}
+.table__cell_topic {
+  min-width: 200px;
+}
+.table__cell_topic a {
+  color: #353535;
+  text-decoration: none;
+  font-size: 14px;
+}
+.table__cell_client {
+  min-width: 120px;
+}
+.table__cell_responsible {
+  min-width: 120px;
+}
+.table__cell_last-answer {
+  min-width: 120px;
+}
+
+.table__cell_status {
+  font-weight: bold;
+}
+.table__cell_status_opened {
+  color: #00b106;
+}
+.table__cell_status_closed {
+  color: #c1c1c1;
+}
+.table__cell_status_declined {
+  color: #c10b00;
+}
+
+.table__cell_priority {
+
+}
+.table__cell_priority_normal {
+  font-weight: bold;
+  color: #009aed;
+}
+.table__cell_priority_high {
+  font-weight: bold;
+  color: #ed6c00;
+}
+
+.table__cell_expired {
+  min-width: 90px;
+  text-align: center;
+}
+.table__cell_expired_no span {
+  display: block;
+  padding: 5px;
+  background-color: #6fff6f;
+}
+.table__cell_expired_yes span {
+  display: block;
+  padding: 5px;
+  background-color: #ff6f6f;
+}
