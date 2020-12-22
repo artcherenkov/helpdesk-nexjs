@@ -7,8 +7,9 @@ import moment from 'moment';
 const Row = ({issue}) => {
   // todo обрезать длинные темы
 
-  const {status, priority, isExpired, date, dueDate, actualDueDate} = issue;
+  const {status, priority, isExpired, createdAt: date, dueDate, actualDueDate} = issue;
   const isExpiredClassName = getKeyByValue(IsExpired, isExpired);
+
 
   // fDate – буква f значит "форматированный"
   const [fDate, fDueDate, fActualDate] =  formatDates(`DD.MM.yyyy hh:mm`, moment(date), moment(dueDate), moment(actualDueDate));

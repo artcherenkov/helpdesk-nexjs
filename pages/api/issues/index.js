@@ -1,17 +1,28 @@
 import {PrismaClient} from '@prisma/client';
 
 export default async function (req, res) {
-  const prisma = new PrismaClient({ log: ["query"] });
+  let { error, content } = await getIssues();
 
-  console.log(prisma);
+  if (error) {
+    res.status(500);
+    res.json({error: `Sorry, unable to save content to database suuuukaaa: ${error}`});
+    return;
+  }
+
+  res.json({content});
+}
+
+export const getIssues = async () => {
+  const prisma = new PrismaClient();
+  let content, error = null;
 
   try {
-    const content = await prisma.issues.findMany();
-    res.json({content});
+    content = await prisma.issues.findMany();
   } catch (e) {
-    res.status(500);
-    res.json({error: `Sorry, unable to save content to database suuuukaaa: ${e}`});
+    error = e;
   } finally {
-    await prisma.disconnect();
+    prisma.disconnect();
   }
+
+  return {error, content};
 }

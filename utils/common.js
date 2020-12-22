@@ -45,3 +45,7 @@ export const getKeyByValue = (obj, value) => (
 export const formatDates = (pattern, ...dates) => (
   dates.map(date => date.format(pattern))
 );
+
+export const parse = (content) => {
+  return JSON.parse(JSON.stringify(content));
+}
